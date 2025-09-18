@@ -2,8 +2,6 @@ import torch
 import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset, random_split
 import numpy as np
-import matplotlib
-matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import torch.nn as nn
 
@@ -216,7 +214,7 @@ for epoch in range(epochs):
             
     train_loss_list.append(avg_train_loss)
 
-    if epoch % 50 == 0:
+    if epoch % 100 == 0:
         torch.save(model.state_dict(), f"TCNN_RC{epoch}.pth")
 
     with torch.no_grad():
@@ -249,5 +247,3 @@ for epoch in range(epochs):
     # 훈련 손실과 검증 손실을 함께 출력하는 것이 좋습니다.
     print(f"[Epoch {epoch+1}/{epochs}] Train Loss: {avg_train_loss:.6f} | Val Loss: {avg_vali_loss:.6f}")
 
-# ----- 모델 저장 -----
-torch.save(model.state_dict(), "TCNN_RC.pth")

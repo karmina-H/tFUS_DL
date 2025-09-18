@@ -2,8 +2,6 @@ import torch
 import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset, random_split
 import numpy as np
-import matplotlib
-matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import torch.nn as nn
 
