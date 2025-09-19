@@ -214,7 +214,7 @@ for epoch in range(epochs):
             
     train_loss_list.append(avg_train_loss)
 
-    if epoch % 100 == 0:
+    if epoch % 500 == 0:
         torch.save(model.state_dict(), f"TCNN_RC{epoch}.pth")
 
     with torch.no_grad():
